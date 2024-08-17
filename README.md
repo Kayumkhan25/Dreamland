@@ -14,3 +14,12 @@
 <p>
   It also handle some types of errors that occurs during the calling of APIs.
 </p>
+<b>
+  use syntax on your terminal :
+  'node app.js'
+  to run this.
+</b><br/>
+<b>
+  For browser use url:
+  "http://localhost:8080/listings"
+</b>
