@@ -1,0 +1,146 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+
+/* navbar*/
+
+.navbar {
+    height: 5rem;
+    background-color: #fff;
+    display: flex;
+}
+
+.fa-compass {
+    font-size: 2rem;
+    color: #e45;
+    transition: 0.3s;
+}
+
+.fa-compass:hover {
+    font-size: 2.1rem;
+    color: red;
+}
+
+.nav-link {
+    color: #111 !important;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: rgb(50, 145, 50) !important;
+    font-weight: 600;
+}
+
+
+/* footer */
+
+.f-info {
+    height: 7rem;
+    background-color: #dcdcdc;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #235;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 0.8rem;
+}
+
+
+/* Cards */
+
+.card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text {
+    font-weight: 400 !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+
+/* Card effect */
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: #fff;
+}
+
+
+/* button */
+
+.btn-success {
+    border: none;
+    transition: 0.5s;
+}
+
+.btn-success:hover {
+    background-color: rgb(38, 154, 38);
+    border: 1px solid rgb(57, 177, 57) !important;
+}
+
+
+/* Heading */
+
+.pg-heading {
+    margin: 0.5rem 0.5rem 1rem;
+}
+
+
+/* Show page */
+
+.show-img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
