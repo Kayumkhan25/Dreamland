@@ -32,9 +32,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist")));
 app.engine('ejs', ejsMate);
 
-// app.get("/", (req, res) => {
-//     res.send("welcome to the project");
-// });
+app.get("/", (req, res) => {
+    res.send("welcome to the project");
+});
 
 const validateListing = (req, res, next) => {
     let {error} = listingSchema.validate(req.body);
@@ -49,9 +49,9 @@ const validateListing = (req, res, next) => {
 }
 
 // Index Route
-app.get("/", wrapAsync(async(req, res) => {
+app.get("/listings", wrapAsync(async(req, res) => {
     const allListing = await Listing.find({});
-    res.render("/listings/index.ejs", { allListing });
+    res.render("listings/index.ejs", { allListing });
 }))
 
 // New Route
