@@ -76,6 +76,15 @@ body {
 }
 
 
+/* Heart */
+
+.fa-heart:hover {
+    font-size: 2rem;
+    color: #e45;
+    transition: 0.3s;
+}
+
+
 /* Cards */
 
 .card {
@@ -91,6 +100,8 @@ body {
 
 .card-body {
     padding: 0 !important;
+    margin-left: 3px;
+    margin-right: 2px;
 }
 
 .card-text {
