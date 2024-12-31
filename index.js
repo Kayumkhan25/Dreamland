@@ -10,6 +10,7 @@ const expressError = require("./utils/expressError.js");
 const { listingSchema } = require("./schema.js");
 const flash = require("connect-flash");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 
 const PORT = process.env.PORT || 8080;
 const MONGO_URL = "mongodb://127.0.0.1:27017/dreamland";
@@ -38,12 +39,17 @@ app.engine("ejs", ejsMate);
 
 // Session and Flash Middleware
 app.use(
-  session({
-    secret: "thisshouldbeasecret",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+    session({
+      secret: "thisshouldbeasecret",
+      resave: false,
+      saveUninitialized: true,
+      store: MongoStore.create({
+        mongoUrl: MONGO_URL,  // Use MongoDB for session storage
+        ttl: 14 * 24 * 60 * 60, // 14 days session TTL
+      }),
+    })
+  );
+    
 app.use(flash());
 
 // Global Variables for Flash Messages
