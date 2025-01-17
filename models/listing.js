@@ -5,11 +5,11 @@ const Schema = mongoose.Schema;
 const listingSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: [true, "Title required"]
     },
     description: {
         type: String,
-        required: true 
+        required: [true, "Description required"] 
     },
     image: {
         type: String,
@@ -18,16 +18,16 @@ const listingSchema = new Schema({
     },
     price: {
         type: Number,
-        required: true, // Optional field
+        required: [true, "Price required"],
         min: 100, 
     },
     location: {
         type: String,
-        required: true 
+        required: [true, "Location required"] 
     },
     country: {
         type: String,
-        required: true 
+        required: [true, "Country required"] 
     }
 });
 

@@ -17,5 +17,5 @@
   const navbarToggler = document.querySelector('.navbar-toggler');
   navbarToggler.addEventListener('click', () => {
       document.querySelector('#navbarNavAltMarkup').classList.toggle('show');
-  });
+  }); 
 })();

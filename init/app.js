@@ -1,8 +1,12 @@
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
+const dotenv = require("dotenv")
 
-const Mongo_Url = "mongodb://127.0.0.1:27017/dreamland";
+
+dotenv.config();
+
+const MONGO_URL = process.env.MONGO_URL;
 
 main()
 .then(() => {
@@ -13,7 +17,7 @@ main()
 });
 
 async function main() {
-    await mongoose.connect(Mongo_Url);    
+    await mongoose.connect(MONGO_URL);    
 }
 
 const initDB = async () => {
