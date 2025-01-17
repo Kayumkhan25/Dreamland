@@ -10,6 +10,7 @@ const Listing = require("./models/listing.js");
 const { listingSchema } = require("./schema.js");
 const wrapAsync = require("./utils/wrapAsync.js");
 const expressError = require("./utils/expressError.js");
+const favicon = require("serve-favicon");
 
 dotenv.config(); // Load environment variables
 
@@ -41,6 +42,7 @@ app.use(express.urlencoded({ extended: true })); // Parse form data
 app.use(methodOverride("_method")); // Support for PUT/DELETE requests
 app.use(express.static(path.join(__dirname, "public"))); // Serve static files
 app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist"))); // Serve Bootstrap
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // Session and Flash Middleware
 app.use(
