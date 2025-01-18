@@ -91,6 +91,9 @@ body {
         background-color: #f8f9fa;
         color: rgb(50, 145, 50) !important;
     }
+    .card-img-top {
+        width: 100px !important;
+    }
 }
 
 
@@ -157,14 +160,26 @@ footer .social-icons i:hover {
 
 .card-img-top {
     border-radius: 1rem !important;
-    width: 100% !important;
+    width: 300px !important;
     object-fit: cover;
 }
 
 .card-body {
-    padding: 0 !important;
-    margin-left: 3px;
-    margin-right: 2px;
+    padding: 2px !important;
+    margin: 2px;
+}
+
+.card-title a {
+    text-decoration: none;
+    color: rgb(255, 61, 61)
+}
+
+.card-body h6 {
+    color: #444;
+}
+
+.card-body div {
+    font-weight: 600;
 }
 
 .card-text {
@@ -174,6 +189,12 @@ footer .social-icons i:hover {
 .listing-link {
     text-decoration: none;
 }
+
+
+/* 
+.row {
+    min-height: 100vh;
+} */
 
 
 /* Card effect */

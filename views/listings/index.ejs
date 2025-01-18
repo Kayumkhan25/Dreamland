@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerPlate") %>
 
     <h3 class="pg-heading">All Listings</h3>
-    <div class="justify-content-between offset-2 offset-md-0 row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <div class="justify-content-evenly offset-0 row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
         <% if (allListing.length === 0) { %>
             <h5 class="text-center">No listings found. Create one!</h5>
             <% } else { %>
@@ -11,7 +11,7 @@
                     <img src="<%= listing.image || '/images/placeholder.jpg' %>" class="card-img-top" alt="listing_image" style="height:20rem;" />
                 
                         <div class="card-img-overlay"></div>
-                        <div class="card-body">
+                        <div class="card-body mt-3">
                             <h5 class="card-title">
                                 <a href="/listings/<%= listing._id %>"><b><%= listing.title %></b></a>
                         </h5>
@@ -19,11 +19,13 @@
                             <%= listing.location %>,
                                 <%= listing.country %>
                         </h6>
-                        &#8377;
-                        <%= listing.price.toLocaleString("en-IN") %> / Day
-                            <p class="card-text">
-                                <%= listing.description %>
-                            </p>
+                        <div>
+                            &#8377;
+                            <%= listing.price.toLocaleString("en-IN") %> / Day
+                                <p class="card-text">
+                                    <%= listing.description %>
+                                </p>
+                        </div>
                     </div>
                     </a>
     </div>
