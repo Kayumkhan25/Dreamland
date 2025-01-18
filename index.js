@@ -156,11 +156,16 @@ app.all("*", (req, res, next) => {
 });
 
 // Error Handling Middleware
-// Error Handling Middleware
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong" } = err;
+
+  if (req.accepts("json")) {
+    return res.status(statusCode).json({ error: message });
+  }
+
   res.status(statusCode).render("listings/error", { err });
 });
+
 
 // Start the Server with Fallback
 const server = app.listen(PORT, () => {

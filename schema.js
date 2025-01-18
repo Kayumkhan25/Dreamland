@@ -24,10 +24,10 @@ module.exports.listingSchema = Joi.object({
       }), // Allows valid URLs, empty strings, or null
     price: Joi.number()
       .required()
-      .min(0)
+      .min(100)
       .messages({
         "number.base": "Price must be a number.",
-        "number.min": "Price must be a positive value.",
+        "number.min": "Price must be at least 100.",
         "any.required": "Price is required.",
       }),
     country: Joi.string()
@@ -45,4 +45,4 @@ module.exports.listingSchema = Joi.object({
         "string.max": "Location must not exceed 50 characters.",
       }),
   }).required(),
-});
+}).options({ allowUnknown: false }); // Disallow unknown fields
